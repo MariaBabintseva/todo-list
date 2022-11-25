@@ -1,38 +1,171 @@
+@font-face {
+  font-family: Gilroy;
+  src: url('../public/assets/fonts/gilroy-regular.ttf');
+}
+
+body {
+  margin: 0;
+  font-family: Gilroy;
+  background-color: #eff3f8;
+  padding: 30px;
+}
+
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Todos {
+  width: 50vw;
+  background: #FFFFFF;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px;
+  max-height: 85vh;
+  overflow-y: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.toolbar {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  padding: 16px;
+  border-radius: 6px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.btn-action {
+  padding: 12px 20px;
+  border-radius: 6px;
+  margin-right: 10px;
+  border: none;
+  cursor: pointer;
+  font-family: Gilroy;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.btn-add {
+  background: #16A34A;
+}
+
+.btn-save {
+  background: #4F46E5;
+}
+
+.table {
+  width: 100%;
+  margin-top: 16px;
+  overflow-x: auto;
+}
+
+.table-head {
+  background: #f8f9fa;
+  font-weight: 700;
+}
+
+.table tr td {
+  padding: 10px;
+}
+
+input[type='checkbox'] {
+  width: 16px;
+  height: 16px;
+}
+
+.table tbody tr:hover {
+  background-color: #e9ecef;
+  cursor: pointer;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #FFFFFF;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #FFFFFF;
+  background-color: #fcfcfc;
+}
+
+
+tbody tr.completed,
+tbody tr.completed:hover {
+  background-color: #EEF2FF;
+  color: #4338CA;
+  text-decoration: line-through;
+}
+
+tbody tr.expired,
+tbody tr.expired:hover {
+  background-color: #ffd0ce;
+  color: #ff6259;
+}
+
+
+.form {
   display: flex;
   flex-direction: column;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+}
+
+.form input,
+.form textarea {
+  border-radius: 6px;
+  outline: none;
+  border: 1px solid #dee2e6;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.description {
+  font-family: Gilroy;
+}
+
+.added-files {
+  display: flex;
   align-items: center;
+}
+
+.file-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.added-files .file {
+  border: 1px solid black;
+  width: 70px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.remove-file {
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-edit,
+.btn-remove {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  width: 30px;
+  height: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.more .btn-container {
+  display: flex;
+  justify-content: end;
+  width: 100%;
 }
